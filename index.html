@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		// 作成
+		const mapA = new Map();
+		console.log(mapA);
+
+		// 初期化値の渡し方
+		// 引数として渡せるのは配列で
+		// 中身は1つのキーと値の組み合わせ[キー、値]とした配列にする
+
+		const mapB = new Map([["first", 1], ["second", 2]]);
+		console.log(mapB);
+
+		// 1.要素の追加
+		// 2.要素数の取得
+		// 3.指定したキーの要素を取得
+		// 4.指定したキーの要素が存在するかどうか
+		// 5.指定したキーの要素を削除
+		// 6.要素の前削除
+
+		const sample = new Map();
+		// 1
+		sample.set("first", 1);
+		sample.set("second", 2);
+		console.log(sample)
+		// 2
+		console.log(sample.size); // 2
+		// 3
+		console.log(sample.get("first")); // 1
+		// 4
+		console.log(sample.has("second")); // true
+		// 5
+		console.log(sample.delete("second")); // true
+		console.log(sample)
+		// 6
+		sample.clear()
+		console.log(sample)
+
+		// 反復処理の使用
+		const voice = new Map();
+		voice.set("孫悟空", "野沢雅子");
+		voice.set("孫悟飯", "野沢雅子");
+		voice.set("孫悟天", "野沢雅子");
+		voice.set("クリリン", "田中真弓");
+		voice.set("ヤジロベー", "田中真弓");
+
+		const result = [];
+		voice.forEach((value, key) => {
+			result.push(`${key}:${value}`);
+		})
+		console.log(result)
+
+		// Mapの利点
+		// 1. 要素数を簡単に取得できる
+		// 2. 要素を簡単に列挙できる
+		// 3. オブジェクトリテラルと異なり、空の連想配列を作成出来る
+	</script>
+</body>
+
+</html>
